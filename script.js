@@ -4,21 +4,18 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    // Check if the username and password match the data in users.json (simulated data)
-    fetch('users.json')
-        .then(response => response.json())
-        .then(users => {
-            var user = users.find(u => u.username === username && u.password === password);
-            if (user) {
-                // Successful login, redirect to the dashboard
-                localStorage.setItem("username", username); // Store username in localStorage
-                window.location.href = "./dash/dashboard.html"; // Redirect to the dashboard page
-            } else {
-                // Failed login attempt
-                document.getElementById("error-message").textContent = "Invalid username or password.";
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    // Check user credentials on the server-side
+    // Assuming the server responds with a success status if credentials are correct
+    // You can implement this logic using your preferred server-side technology (Node.js, PHP, etc.)
+
+    // For demonstration purposes, let's assume the server responds with a success status
+    var serverResponse = { status: "success" };
+
+    if (serverResponse.status === "success") {
+        // Successful login, redirect to the dashboard in the same directory
+        window.location.href = "./dashboard.html";
+    } else {
+        // Failed login attempt
+        document.getElementById("error-message").textContent = "Invalid username or password.";
+    }
 });
