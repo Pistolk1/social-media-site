@@ -1,20 +1,44 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .container {
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 50px;
 }
 
-form {
-    display: inline-block;
-    text-align: left;
+.profile-section {
+    margin: 20px 0;
 }
 
-label, input {
+#profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 10px;
+}
+
+#post-text {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#post-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#post-button:hover {
+    background-color: #45a049;
 }
